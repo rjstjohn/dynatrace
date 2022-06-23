@@ -16,6 +16,16 @@ objectives:
     - <=800
   weight: 1
   key_sli: false
+- sli: response_time_p50
+  displayName: ""
+  pass:
+  - criteria:
+    - <300
+  warning:
+  - criteria:
+    - <=400
+  weight: 1
+  key_sli: false
 - sli: error_rate
   displayName: ""
   pass:
