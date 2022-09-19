@@ -1,7 +1,3 @@
-spec_version: "1.0"
+spec_version: 0.1.4
 indicators:
-  error_rate: metricSelector=builtin:service.errors.total.rate:merge("dt.entity.service"):avg&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:authservice)
-  response_time_p50: metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(50)&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:authservice)
-  response_time_p90: metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(90)&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:authservice)
-  response_time_p95: metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(95)&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:authservice)
-  throughput: metricSelector=builtin:service.requestCount.total:merge("dt.entity.service"):sum&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:authservice)
+    service_rt_av: MV2;MicroSecond;entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.response.time:splitBy():auto:names
