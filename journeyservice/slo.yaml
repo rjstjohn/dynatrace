@@ -1,45 +1,61 @@
-spec_version: "1.0"
+spec_version: ""
 filter: {}
 comparison:
-  compare_with: single_result
-  include_result_with_score: pass
-  number_of_comparison_results: 1
-  aggregate_function: avg
+    compare_with: several_results
+    include_result_with_score: pass
+    number_of_comparison_results: 3
+    aggregate_function: avg
 objectives:
-- sli: response_time_p95
-  displayName: ""
-  pass:
-  - criteria:
-    - <600
-  warning:
-  - criteria:
-    - <=800
-  weight: 1
-  key_sli: false
-- sli: response_time_p50
-  displayName: ""
-  pass:
-  - criteria:
-    - <300
-  warning:
-  - criteria:
-    - <=400
-  weight: 1
-  key_sli: false
-- sli: error_rate
-  displayName: ""
-  pass:
-  - criteria:
-    - <5
-  warning: []
-  weight: 1
-  key_sli: false
-- sli: throughput
-  displayName: ""
-  pass: []
-  warning: []
-  weight: 0
-  key_sli: false
+    - sli: service_rt_av
+      displayName: ""
+      pass:
+        - criteria:
+            - <3
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: host_disk
+      displayName: ""
+      pass:
+        - criteria:
+            - '>100000000'
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: error_rate
+      displayName: ""
+      pass:
+        - criteria:
+            - <2
+      warning:
+        - criteria:
+            - <5
+      weight: 2
+      key_sli: false
+    - sli: throughput
+      displayName: ""
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: cpu
+      displayName: ""
+      pass:
+        - criteria:
+            - <50
+      warning:
+        - criteria:
+            - <80
+      weight: 1
+      key_sli: true
+    - sli: synth_login
+      displayName: ""
+      pass:
+        - criteria:
+            - '>99'
+      warning: []
+      weight: 1
+      key_sli: false
 total_score:
-  pass: 90%
-  warning: 75%
+    pass: 85%
+    warning: 80%
