@@ -1,5 +1,7 @@
 spec_version: 0.1.4
 indicators:
+    cpu: entitySelector=type(HOST),entityName("TAG009442986685.clients.dynatrace.org")&metricSelector=builtin:host.cpu.usage:splitBy():auto:names
     error_rate: entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.errors.fivexx.rate:splitBy():auto:names
     host_disk: MV2;Byte;metricSelector=builtin:host.disk.avail:splitBy():auto:names
     service_rt_av: MV2;MicroSecond;entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.response.time:splitBy():auto:names
+    throughput: entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.requestCount.total:splitBy():auto:names
