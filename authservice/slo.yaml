@@ -18,7 +18,7 @@ objectives:
       displayName: ""
       pass:
         - criteria:
-            - '>1000000000'
+            - '>100000000'
       warning: []
       weight: 1
       key_sli: false
