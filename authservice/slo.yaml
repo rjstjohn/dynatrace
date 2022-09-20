@@ -48,6 +48,14 @@ objectives:
             - <80
       weight: 1
       key_sli: true
+    - sli: synth_login
+      displayName: ""
+      pass:
+        - criteria:
+            - '>99'
+      warning: []
+      weight: 1
+      key_sli: false
 total_score:
     pass: 85%
     warning: 80%
