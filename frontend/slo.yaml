@@ -34,7 +34,7 @@ objectives:
       displayName: ""
       pass:
         - criteria:
-            - <40
+            - <10
       warning:
         - criteria:
             - <60
