@@ -1,7 +1,9 @@
-spec_version: "1.0"
+spec_version: 0.1.4
 indicators:
-    error_rate: metricSelector=builtin:service.errors.total.rate:merge("dt.entity.service"):avg&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:frontend)
-    response_time_p50: metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(50)&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:frontend)
-    response_time_p90: metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(90)&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:frontend)
-    response_time_p95: metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(95)&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:frontend)
-    throughput: metricSelector=builtin:service.requestCount.total:merge("dt.entity.service"):sum&entitySelector=type(SERVICE),tag(keptn_managed),tag(keptn_service:frontend)
+    cpu: entitySelector=type(HOST),entityName("TAG009442986685.clients.dynatrace.org")&metricSelector=builtin:host.cpu.usage:splitBy():auto:names
+    error_rate: entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.errors.fivexx.rate:splitBy():auto:names
+    host_disk: MV2;Byte;metricSelector=builtin:host.disk.avail:splitBy():auto:names
+    service_rt_av: MV2;MicroSecond;entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.response.time:splitBy():auto:names
+    synth_login: entitySelector=type(SYNTHETIC_TEST),entityName("easyTravel Login")&metricSelector=builtin:synthetic.browser.availability.location.totalWoMaintenanceWindow:splitBy():auto:names
+    throughput: entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.requestCount.total:splitBy():auto:names
+    ua_login: entitySelector=type(APPLICATION_METHOD),entityName("/easytravel/rest/login")&metricSelector=builtin:apps.web.action.duration.xhr.browser:splitBy():auto:names
