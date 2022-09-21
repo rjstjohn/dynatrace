@@ -35,9 +35,7 @@ objectives:
       pass:
         - criteria:
             - <10
-      warning:
-        - criteria:
-            - <60
+      warning: []
       weight: 1
       key_sli: true
     - sli: ua_login
