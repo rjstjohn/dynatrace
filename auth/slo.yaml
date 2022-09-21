@@ -47,7 +47,7 @@ objectives:
             - <100
             - <=+15%
       warning: []
-      weight: 1
+      weight: 2
       key_sli: false
     - sli: host_disk
       displayName: ""
