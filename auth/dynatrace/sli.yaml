@@ -6,3 +6,4 @@ indicators:
     service_rt_av: MV2;MicroSecond;entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.response.time:splitBy():auto:names
     synth_login: entitySelector=type(SYNTHETIC_TEST),entityName("easyTravel Login")&metricSelector=builtin:synthetic.browser.availability.location.totalWoMaintenanceWindow:splitBy():auto:names
     throughput: entitySelector=type(SERVICE),entityName("AuthenticationService")&metricSelector=builtin:service.requestCount.total:splitBy():auto:names
+    ua_login: entitySelector=type(APPLICATION_METHOD),entityName("/easytravel/rest/login")&metricSelector=builtin:apps.web.action.duration.xhr.browser:splitBy():auto:names
