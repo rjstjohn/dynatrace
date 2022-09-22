@@ -34,10 +34,10 @@ objectives:
       displayName: ""
       pass:
         - criteria:
-            - <60
+            - <20
       warning: []
       weight: 1
-      key_sli: false
+      key_sli: true
     - sli: ua_login
       displayName: ""
       pass:
